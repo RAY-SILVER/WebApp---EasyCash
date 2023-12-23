@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyCash - Carteira</title>
+
+    <!-- Adicione os links para os arquivos do Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <style>
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="container">
+
+    <div class="row mt-3">
+        <!-- Botão de Voltar -->
+        <div class="col-auto">
+            <a href="/" class="btn btn-secondary">
+                <span aria-hidden="true">&larr;</span>
+            </a>
+        </div>
+
+        <!-- Texto "Carteira" -->
+        <div class="col">
+            <h1>Carteira</h1>
+        </div>
+    </div>
+
+    <h2><p>R$ {{ carteira }}</p></h2>
+
+    <!-- Adicionar Dinheiro -->
+    <form action="{{ url_for('carteira') }}" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="valor_adicionar">Adicionar Valor:</label>
+            <div class="input-group">
+                <input type="number" step="0.01" name="valor_adicionar" class="form-control" required>
+                <div class="input-group-append">
+                    <button type="submit" name="action" value="adicionar" class="btn btn-primary">Adicionar Dinheiro</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Excluir Dinheiro -->
+    <form action="{{ url_for('carteira') }}" method="post">
+        <div class="form-group">
+            <label for="valor_excluir">Excluir Valor:</label>
+            <div class="input-group">
+                <input type="number" step="0.01" name="valor_excluir" class="form-control" required>
+                <div class="input-group-append">
+                    <button type="submit" name="action" value="excluir" class="btn btn-danger">Excluir Dinheiro</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Adicione mais conteúdo conforme necessário -->
+
+</body>
+</html>

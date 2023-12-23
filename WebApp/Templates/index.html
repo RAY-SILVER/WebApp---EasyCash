@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyCash - Bem-vindo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
 
+        h1 {
+            color: #336699;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            padding: 10px;
+            border: 1px solid #336699;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+        }
+
+        a:hover {
+            background-color: #336699;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo ao EasyCash!</h1>
+    <ul>
+        <li><a href="{{ url_for('carteira') }}">Carteira</a></li>
+        <li><a href="{{ url_for('compromissos') }}">Compromissos financeiros</a></li>
+        <li><a href="{{ url_for('metas_page') }}">Metas</a></li>
+        <li><a href="{{ url_for('emergencias') }}">Emergências</a></li>
+        <li><a href="{{ url_for('dinheiro_livre') }}">Dinheiro livre</a></li>
+        <li><a href="{{ url_for('dicas') }}">Dicas</a></li>
+        <li><a href="{{ url_for('graficos') }}">Gráficos</a></li>
+    </ul>
+</body>
+</html>

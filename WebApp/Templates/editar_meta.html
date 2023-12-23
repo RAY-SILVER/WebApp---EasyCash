@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Meta</title>
+
+    <!-- Adicione o link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Editar Meta</h1>
+        <form action="{{ url_for('editar_meta') }}" method="post">
+            <div class="form-group">
+                <label for="nomeMetaEditar">Nome da Meta:</label>
+                <input type="text" class="form-control" id="nomeMetaEditar" name="nome_meta_editar">
+            </div>
+            <div class="form-group">
+                <label for="novoNomeMeta">Novo Nome:</label>
+                <input type="text" class="form-control" id="novoNomeMeta" name="novo_nome_meta" required>
+            </div>
+            <div class="form-group">
+                <label for="novoPrazoMeta">Novo Prazo Final:</label>
+                <input type="text" class="form-control" id="novoPrazoMeta" name="novo_prazo_meta" required>
+            </div>
+            <div class="form-group">
+                <label for="novoValorMeta">Novo Valor a ser Atingido:</label>
+                <input type="text" class="form-control" id="novoValorMeta" name="novo_valor_meta" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+            <!-- Use um botão de link para voltar à página de teste -->
+            <a href="{{url_for('metas_page')}}" class="btn btn-secondary">Voltar</a>
+        </form>
+    </div>
+
+    <!-- Adicione o link para o Bootstrap JS e o jQuery (opcional, mas necessário para alguns recursos do Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
