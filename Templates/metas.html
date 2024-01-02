@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metas</title>
+
+    <!-- Adicione o link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="row mt-3">
+            <!-- Botão de Voltar -->
+            <div class="col-auto">
+                <a href="/" class="btn btn-secondary">
+                    <span aria-hidden="true">&larr;</span>
+                </a>
+            </div>
+
+            <!-- Texto "Metas" -->
+            <div class="col">
+                <h1 class="mb-4">Metas Financeiras</h1>
+            </div>
+        </div>
+
+         <form action="{{ url_for('metas_page') }}" method="post" class="form-inline">
+            <div class="form-group">
+                <label for="opcaoMetas" class="mr-2">Escolha uma opção:</label>
+                <select name="opcao_metas" class="form-control mr-2" id="opcaoMetas">
+                    <option value="1">Adicionar meta</option>
+                    <option value="2">Editar meta</option>
+                    <option value="3">Excluir meta</option>
+                    <option value="4">Visualizar metas</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Executar</button>
+        </form>
+    </div>
+
+    <!-- Adicione o link para o Bootstrap JS e o jQuery (opcional, mas necessário para alguns recursos do Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

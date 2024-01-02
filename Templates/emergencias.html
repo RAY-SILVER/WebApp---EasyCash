@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyCash - Emergência</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="container">
+
+    <div class="row mt-3">
+        <!-- Botão de Voltar -->
+        <div class="col-auto">
+            <a href="/" class="btn btn-secondary">
+                <span aria-hidden="true">&larr;</span>
+            </a>
+        </div>
+
+        <!-- Texto "Saldo de emergência" -->
+        <div class="col">
+            <h1>Saldo de Emergências</h1>
+        </div>
+    </div>
+
+    <h2><p>R$ {{saldo}}</p></h2>
+
+    <!-- Adicionar Dinheiro -->
+    <form action="{{ url_for('emergencias') }}" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="valor_adicionar">Adicionar Valor:</label>
+            <div class="input-group">
+                <input type="number" step="0.01" name="valor_adicionar" class="form-control" required>
+                <div class="input-group-append">
+                    <button type="submit" name="action" value="adicionar" class="btn btn-primary">Adicionar Dinheiro</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Resgatar Dinheiro -->
+    <form action="{{ url_for('emergencias') }}" method="post">
+        <div class="form-group">
+            <label for="valor_resgatar">Resgatar Valor:</label>
+            <div class="input-group">
+                <input type="number" step="0.01" name="valor_resgatar" class="form-control" required>
+                <div class="input-group-append">
+                    <button type="submit" name="action" value="resgatar" class="btn btn-danger">Resgatar Dinheiro</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+

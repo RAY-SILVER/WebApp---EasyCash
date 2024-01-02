@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Metas</title>
+
+    <!-- Adicione o link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Metas Atuais</h1>
+        <ul class="list-group">
+            {% for meta in metas %}
+                <li class="list-group-item">{{ meta.Nome }} - Prazo: {{ meta.Prazo }} - Valor: {{ meta.Valor }}</li>
+            {% endfor %}
+        </ul>
+        <!-- Use um botão de link para voltar à página de teste -->
+        <a href="{{url_for('metas_page')}}" class="btn btn-secondary mt-3">Voltar</a>
+    </div>
+
+    <!-- Adicione o link para o Bootstrap JS e o jQuery (opcional, mas necessário para alguns recursos do Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
